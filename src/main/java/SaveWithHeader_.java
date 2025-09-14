@@ -1,5 +1,3 @@
-package Tools;
-
 import ij.IJ;
 import ij.ImageJ;
 import ij.ImagePlus;
@@ -14,7 +12,6 @@ import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
-import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -34,6 +31,11 @@ public final class SaveWithHeader_ extends PlugInTool implements ActionListener 
             "32-bit signed", "32-bit unsigned",
             "32-bit float", "64-bit float"
     };
+    public SaveWithHeader_() {
+        // 插件构造时注册自己到工具栏
+        Toolbar.addPlugInTool(this);
+    }
+
 
     @Override
     public void showPopupMenu(MouseEvent e, Toolbar par) {
@@ -186,7 +188,7 @@ public final class SaveWithHeader_ extends PlugInTool implements ActionListener 
     public String getToolIcon() { return "T0b12S Tbb12H"; }
 
     @Override
-    public String getToolName() { return "Window Level Tool (right click for Reset, Auto)"; }
+    public String getToolName() { return "Save Image"; }
 
     /** Main 测试 */
     public static void main(String[] args) {

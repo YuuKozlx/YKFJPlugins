@@ -1,5 +1,3 @@
-package Tools;
-
 import ij.IJ;
 import ij.ImageJ;
 import ij.ImagePlus;
@@ -18,6 +16,11 @@ import java.awt.event.MouseEvent;
  * Window/Level Tool with multiple CT preset windows.
  */
 public final class WindowLevel_Tool extends PlugInTool implements ActionListener {
+    public WindowLevel_Tool() {
+        // 插件构造时注册自己到工具栏
+        Toolbar.addPlugInTool(this);
+    }
+
     static final int AUTO_THRESHOLD = 5000;
 
     int autoThreshold;

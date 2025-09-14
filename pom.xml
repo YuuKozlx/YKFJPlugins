@@ -110,11 +110,25 @@
     </ciManagement>
 
 	<properties>
-		<package-name>Tools</package-name>                   <!-- FIXME: Your project package prefix here -->
-		<main-class>Tools.PluginTest</main-class>        <!-- FIXME: Your project main class here, or delete for none -->
+		<package-name>none</package-name>                   <!-- FIXME: Your project package prefix here -->
+		<main-class>none</main-class>        <!-- FIXME: Your project main class here, or delete for none -->
 		<license.licenseName>cc0</license.licenseName>                      <!-- FIXME: Your license-maven-plugin license code here -->
 		<license.copyrightOwners>My Company, Inc.</license.copyrightOwners> <!-- FIXME: Your organization legal entity name here -->
 	</properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <mainClass>PluginTest</mainClass> <!-- 测试类的全类名 -->
+                    <classpathScope>test</classpathScope>   <!-- 使用测试类路径 -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 	<dependencies>
 		<dependency>
