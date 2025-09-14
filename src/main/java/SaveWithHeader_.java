@@ -94,7 +94,15 @@ public final class SaveWithHeader_ extends PlugInTool implements ActionListener 
             if (dir == null || file == null) return;
             String tgtPath = dir + file;
 
-            // 4. 读取 header（只读前 headerLength 字节）
+            // 4. 检查路径是否相同
+            java.io.File srcFile = new java.io.File(headerPath);
+            java.io.File dstFile = new java.io.File(tgtPath);
+            if (srcFile.getAbsolutePath().equals(dstFile.getAbsolutePath())) {
+                ij.IJ.showMessage("Error", "Source and target file paths cannot be the same!");
+                return;
+            }
+
+            // 5. 读取 header（只读前 headerLength 字节）
             byte[] headerBytes = new byte[headerLength];
             try (InputStream in = Files.newInputStream(Paths.get(headerPath))) {
                 int read = in.read(headerBytes, 0, headerLength);
