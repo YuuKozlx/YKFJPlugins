@@ -60,7 +60,7 @@ How to use this project as a starting point
     5. the *developer* information
     6. the *scm* information
 
-4. Remove the `Process_Pixels.java` file and add your own `.java` files
+4. Remove the `WindowLevel_Tool.java` file and add your own `.java` files
    to `src/main/java/<package>/` (if you need supporting files -- like icons
    -- in the resulting `.jar` file, put them into `src/main/resources/`)
 

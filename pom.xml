@@ -12,12 +12,12 @@
 		<relativePath />
 	</parent>
 
-	<groupId>com.mycompany</groupId>        <!-- FIXME: Your organization groupId here -->
-	<artifactId>Process_Pixels</artifactId> <!-- FIXME: Your project artifactId here   -->
-	<version>0.1.0-SNAPSHOT</version>
+	<groupId>Tools</groupId>        <!-- FIXME: Your organization groupId here -->
+	<artifactId>YuuKo_CT_Plugins</artifactId> <!-- FIXME: Your project artifactId here   -->
+	<version>0.1.0</version>
 
-	<name>Process Pixels</name>                                                   <!-- FIXME: Your project name here          -->
-	<description>A Maven project implementing an ImageJ 1.x plugin.</description> <!-- FIXME: Your project description here   -->
+	<name>CT_Plugins</name>                                                   <!-- FIXME: Your project name here          -->
+	<description>two plugins.</description> <!-- FIXME: Your project description here   -->
 	<url>https://mycompany.com/imagej/process-pixels/</url>                       <!-- FIXME: Your project website here       -->
 	<inceptionYear>2012</inceptionYear>                                           <!-- FIXME: Your project starting year here -->
 	<organization>
@@ -32,28 +32,46 @@
 		</license>
 	</licenses>
 
-	<developers>
-		<!-- See https://imagej.net/contribute/governance#scijava-team-roles -->
-		<developer>
-			<id>octocat</id>                                          <!-- FIXME: Your GitHub handle here -->
-			<name>Noma Onomatopoeia</name>                            <!-- FIXME: Your name here          -->
-			<url>https://mycompany.com/people/noma-onomatopoeia</url> <!-- FIXME: Your website here       -->
-			<roles>
-				<role>founder</role>
-				<role>lead</role>
-				<role>developer</role>
-				<role>debugger</role>
-				<role>reviewer</role>
-				<role>support</role>
-				<role>maintainer</role>
-			</roles>
-		</developer>
-	</developers>
-	<contributors>
-		<contributor>
-			<name>None</name>
-		</contributor>
-	</contributors>
+<!--	<developers>-->
+<!--		&lt;!&ndash; See https://imagej.net/contribute/governance#scijava-team-roles &ndash;&gt;-->
+<!--		<developer>-->
+<!--			<id>YuuKo</id>                                          &lt;!&ndash; FIXME: Your GitHub handle here &ndash;&gt;-->
+<!--			<name>Noma Onomatopoeia</name>                            &lt;!&ndash; FIXME: Your name here          &ndash;&gt;-->
+<!--			<url>https://mycompany.com/people/noma-onomatopoeia</url> &lt;!&ndash; FIXME: Your website here       &ndash;&gt;-->
+<!--			<roles>-->
+<!--				<role>founder</role>-->
+<!--				<role>lead</role>-->
+<!--				<role>developer</role>-->
+<!--				<role>debugger</role>-->
+<!--				<role>reviewer</role>-->
+<!--				<role>support</role>-->
+<!--				<role>maintainer</role>-->
+<!--			</roles>-->
+<!--		</developer>-->
+<!--	</developers>-->
+<!--	<contributors>-->
+<!--		<contributor>-->
+<!--			<name>None</name>-->
+<!--		</contributor>-->
+<!--	</contributors>-->
+
+    <developers>
+        <developer>
+            <id>YuuKozlx</id>
+            <name>YuuKozlx</name>
+            <url>https://github.com/YuuKozlx</url>
+            <roles>
+                <role>developer</role>
+                <role>maintainer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <contributors>
+        <contributor>
+            <name>None</name>
+        </contributor>
+    </contributors>
 
 	<mailingLists>
 		<mailingList>
@@ -62,23 +80,38 @@
 		</mailingList>
 	</mailingLists>
 
-	<scm>
-		<connection>scm:git:https://github.com/imagej/example-legacy-plugin</connection>
-		<developerConnection>scm:git:git@github.com:imagej/example-legacy-plugin</developerConnection>
-		<tag>HEAD</tag>
-		<url>https://github.com/imagej/example-legacy-plugin</url>
-	</scm>
-	<issueManagement>
-		<system>GitHub Issues</system>
-		<url>https://github.com/imagej/example-legacy-plugin/issues</url>
-	</issueManagement>
-	<ciManagement>
-		<system>None</system>
-	</ciManagement>
+<!--	<scm>-->
+<!--		<connection>scm:git:https://github.com/imagej/example-legacy-plugin</connection>-->
+<!--		<developerConnection>scm:git:git@github.com:imagej/example-legacy-plugin</developerConnection>-->
+<!--		<tag>HEAD</tag>-->
+<!--		<url>https://github.com/imagej/example-legacy-plugin</url>-->
+<!--	</scm>-->
+<!--	<issueManagement>-->
+<!--		<system>GitHub Issues</system>-->
+<!--		<url>https://github.com/imagej/example-legacy-plugin/issues</url>-->
+<!--	</issueManagement>-->
+<!--	<ciManagement>-->
+<!--		<system>None</system>-->
+<!--	</ciManagement>-->
+    <scm>
+        <connection>scm:git:https://github.com/YuuKozlx/YKFJPlugins.git</connection>
+        <developerConnection>scm:git@github.com:YuuKozlx/YKFJPlugins.git</developerConnection>
+        <url>https://github.com/YuuKozlx/YKFJPlugins</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/YuuKozlx/YKFJPlugins/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>None</system>
+    </ciManagement>
 
 	<properties>
-		<package-name>com.mycompany.imagej</package-name>                   <!-- FIXME: Your project package prefix here -->
-		<main-class>com.mycompany.imagej.Process_Pixels</main-class>        <!-- FIXME: Your project main class here, or delete for none -->
+		<package-name>Tools</package-name>                   <!-- FIXME: Your project package prefix here -->
+		<main-class>Tools.PluginTest</main-class>        <!-- FIXME: Your project main class here, or delete for none -->
 		<license.licenseName>cc0</license.licenseName>                      <!-- FIXME: Your license-maven-plugin license code here -->
 		<license.copyrightOwners>My Company, Inc.</license.copyrightOwners> <!-- FIXME: Your organization legal entity name here -->
 	</properties>
