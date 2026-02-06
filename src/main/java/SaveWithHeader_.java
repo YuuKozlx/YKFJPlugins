@@ -1,6 +1,7 @@
 import ij.IJ;
 import ij.ImageJ;
 import ij.ImagePlus;
+import ij.WindowManager;
 import ij.gui.GenericDialog;
 import ij.gui.Toolbar;
 import ij.plugin.tool.PlugInTool;
@@ -45,8 +46,14 @@ public final class SaveWithHeader_ extends PlugInTool implements ActionListener 
     }
 
     private void addPopupMenu(Toolbar par) {
-        ImagePlus imp = IJ.getImage();
-        if (impLast != imp) impLast = imp;
+        ImagePlus imp = WindowManager.getCurrentImage();
+        if (imp == null) {
+            IJ.showMessage("Error", "No image available!");
+            return;
+        }
+        if (impLast != imp) {
+            impLast = imp;
+        }
         if (popup1 != null) return;
 
         par.remove(oldPopup);
@@ -79,7 +86,12 @@ public final class SaveWithHeader_ extends PlugInTool implements ActionListener 
             gd.showDialog();
             if (gd.wasCanceled()) return;
 
-            int headerLength = (int) gd.getNextNumber();
+            double headerLengthValue = gd.getNextNumber();
+            if (Double.isNaN(headerLengthValue) || headerLengthValue < 0) {
+                IJ.showMessage("Error", "Header length must be a non-negative number!");
+                return;
+            }
+            int headerLength = (int) headerLengthValue;
             String typeChoice = gd.getNextChoice();
 
             // 2. header 文件
@@ -118,8 +130,8 @@ public final class SaveWithHeader_ extends PlugInTool implements ActionListener 
             fi.height = impLast.getHeight();
             fi.nImages = impLast.getStackSize();
             fi.intelByteOrder = true;
-            fi.fileName = tgtPath;
-            fi.directory = "";
+            fi.fileName = file;
+            fi.directory = dir;
             switch (typeChoice) {
                 case "16-bit signed": fi.fileType = FileInfo.GRAY16_SIGNED; break;
                 case "16-bit unsigned": fi.fileType = FileInfo.GRAY16_UNSIGNED; break;
